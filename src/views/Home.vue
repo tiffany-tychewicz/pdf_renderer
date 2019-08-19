@@ -10,7 +10,10 @@
 export default {
   data: function() {
     return {
+
       message: "Welcome to the PDF Renderer!!"
+
+
     };
   },
   created: function() {},
