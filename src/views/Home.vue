@@ -46,9 +46,9 @@
           <h1>Experience:</h1>
         </div>
           <div v-for="experience in student.experiences">
-            <h2>
+            <h4>
               {{ experience.job_title }}
-            </h2>
+            </h4>
 
             <div>
               {{ student.photo_url }}
