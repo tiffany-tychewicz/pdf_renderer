@@ -66,40 +66,6 @@
             <div>
               {{ education.degree }}
 
-            <h1>Experience:</h1>
-            <div v-for="experience in student.experiences">
-              <div>
-                {{ experience.job_title }}
-              </div>
-              <div>
-                <strong>{{ experience.company_name }}</strong>
-                {{ experience.start_date }} - {{ experience.end_date }}
-              </div>
-              <div>
-                {{ experience.details }}
-              </div>
-
-            </div>
-            <h1>Education:</h1>
-            <div v-for="education in student.educations">
-              <strong>{{ education.university_name }}</strong>
-              {{ education.start_date }} - {{ education.end_date }}
-              <div>
-                {{ education.degree }}
-              </div>
-              <div>
-                {{ education.details }}
-              </div>
-            </div>
-            <h1>Skills:</h1>
-            <div v-for="skill in student.skills">
-              {{ skill.skill_name }}
-            </div>
-            <h1>Capstone:</h1>
-            <div v-for="capstone in student.capstones">
-              {{ capstone.name }}
-              {{ capstone.description }}
-            </div>
           </div>
 
           <div v-if="student">
