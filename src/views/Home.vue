@@ -2,8 +2,8 @@
   <div class="home">
     <div class="index">
       <div v-for="student in students">
-        <div class="button" style="text-align: center; margin-bottom: 50px">
-          <a class="waves-effect waves-light btn" v-on:click="getInfo(student)">
+        <div class="button" style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
+          <a class="waves-effect waves-light btn blue darken-1" v-on:click="getInfo(student)">
             <i class="material-icons right"></i>
             {{ student.first_name }}
           </a>
@@ -71,9 +71,9 @@
 
             <h1>Experience:</h1>
             <div v-for="experience in student.experiences">
-              <h2>
+              <div>
                 {{ experience.job_title }}
-              </h2>
+              </div>
               <div>
                 <strong>{{ experience.company_name }}</strong>
                 {{ experience.start_date }} - {{ experience.end_date }}
@@ -123,8 +123,8 @@
 
         </div>
       </div>
-      <div class="button" style="text-align: center">
-        <a class="waves-effect waves-light btn" v-on:click="renderPDF()">
+      <div class="button" style="text-align: center; margin-top: 15px; margin-bottom: 15px">
+        <a class="waves-effect waves-light btn pulse blue darken-1" v-if="student" v-on:click="renderPDF()">
           <i class="material-icons right"></i>
           Create PDF
         </a>
