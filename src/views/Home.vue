@@ -10,8 +10,10 @@
           <!-- <button v-on:click="getInfo(student)">{{ student.first_name }}</button> -->
         </div>
       </div>
+    </div>
       <div class="resume" style="text-align: center">
         <h1>{{ student.first_name }} {{ student.last_name }}</h1>
+
 
         <div class="contact" v-if="student">
           <div>
@@ -36,12 +38,36 @@
             {{ student.github_url }}
           </div>
           <div class="content">
+
+          <div>
+            {{ student.photo_url }}
+          </div>
+          <div>
+            {{ student.short_bio }}
+          </div>
+          <div v-if="student">
+          <h1>Experience:</h1>
+        </div>
+          <div v-for="experience in student.experiences">
+            <h2>
+              {{ experience.job_title }}
+            </h2>
+
             <div>
               {{ student.photo_url }}
             </div>
             <div>
               {{ student.short_bio }}
             </div>
+
+          </div>
+          <div v-if="student">
+          <h1>Education:</h1>
+        </div>
+          <div v-for="education in student.educations">
+            <strong>{{ education.university_name }}</strong> {{ education.start_date }} - {{ education.end_date }}
+            <div>
+              {{ education.degree }}
 
             <h1>Experience:</h1>
             <div v-for="experience in student.experiences">
@@ -55,6 +81,7 @@
               <div>
                 {{ experience.details }}
               </div>
+
             </div>
             <h1>Education:</h1>
             <div v-for="education in student.educations">
@@ -77,6 +104,23 @@
               {{ capstone.description }}
             </div>
           </div>
+
+          <div v-if="student">
+          <h1>Skills:</h1>
+        </div>
+          <div v-for="skill in student.skills">
+            {{ skill.skill_name }} 
+          </div>
+          <div v-if="student">
+          <h1>Capstone:</h1>
+        </div>
+          <div v-for="capstone in student.capstones">
+            {{ capstone.name }}
+            {{ capstone.description }}
+          </div>
+          </div>
+        </div>
+
         </div>
       </div>
       <div class="button" style="text-align: center">
