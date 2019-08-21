@@ -17,25 +17,25 @@
 
         <div class="contact" v-if="student">
           <div>
-            {{ student.email }}
+            <strong>E-mail: </strong>{{ student.email }}
           </div>
           <div>
-            {{ student.phone_number }}
+            <strong>Phone: </strong>{{ student.phone_number }}
           </div>
           <div>
-            {{ student.linkedin_url }}
+            <strong>LinkedIn: </strong>{{ student.linkedin_url }}
           </div>
           <div>
-            {{ student.twitter_handle }}
+            <strong>Twitter: </strong>{{ student.twitter_handle }}
           </div>
           <div>
-            {{ student.blog }}
+            <strong>Blog: </strong>{{ student.blog }}
           </div>
           <div>
-            {{ student.resume_url }}
+            <strong>Resume URL: </strong> {{ student.resume_url }}
           </div>
           <div>
-            {{ student.github_url }}
+            <strong>Github: </strong>{{ student.github_url }}
           </div>
           <div class="content">
 
