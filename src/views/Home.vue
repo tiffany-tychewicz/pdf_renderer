@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+
     <div class="index">
       <div v-for="student in students">
         <button v-on:click="getInfo(student)">{{student.first_name}}</button>
@@ -7,6 +8,10 @@
     </div>
         <div class="resume">
           <h1>{{ student.first_name }} {{ student.last_name }}</h1>
+
+        <div class="resume" style="text-align: center">
+          <h1>{{ student.first_name }} {{ student.last_name }}</h1>
+
           <div class="contact">
           <div>
             {{ student.email }}
