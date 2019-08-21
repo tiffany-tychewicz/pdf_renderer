@@ -79,6 +79,7 @@ import axios from "axios";
 export default {
   data: function() {
     return {
+      message: "welcome to the pdf renderer!",
       student: {
         firstName: "Peter",
         lastName: "Jang",
@@ -143,7 +144,36 @@ export default {
     renderPDF: function() {
       var doc = new jsPDF();
 
-      doc.text(`First name: ${this.student.firstName}`, 20, 20);
+      doc.text(`Full name: ${this.student.firstName} ${this.student.lastName}`, 10, 10);
+      doc.text(`Contact info: ${this.student.email} ${this.student.phoneNumber}`, 10, 20);
+      doc.text(`Social: ${this.student.twitterHandle} ${this.student.linkedinURL} ${this.student.blog}`, 10, 30);
+      doc.text(`Experience: `, 10, 40);
+      var experiences = this.student.experience;
+      var x = 10;
+      var y = 50;
+      experiences.forEach(function(experience) {
+        doc.text(`${experience.jobTitle}, ${experience.company}, ${experience.startDate}- ${experience.endDate}`, x, y);
+        y += 10;
+      });
+
+      y += 10;
+
+      doc.text(`Education:`, x, y);
+      y += 10;
+      var education = this.student.education;
+      education.forEach(function(school) {
+        doc.text(`${school.university}, ${school.startDate} - ${school.endDate}, degree in ${school.degree}`, x, y);
+        y += 10;
+      });
+      y += 10;
+      doc.text(`Skills:`, 10, y);
+      y += 10;
+      var skills = this.student.skills;
+      skills.forEach(function(skill) {
+        doc.text(`${skill}`, 10, y);
+        y += 10;
+      });
+
       doc.save("resume.pdf");
     }
   },
