@@ -75,19 +75,26 @@ export default {
   methods: {
     renderPDF: function() {
       var doc = new jsPDF();
+      doc.addFont("ArialMS", "Arial", "normal");
+      doc.setFont("Arial");
+      doc.setFontSize(14);
 
-      doc.text(`Full name: ${this.student.firstName} ${this.student.lastName}`, 10, 10);
+      doc.fromHTML(`<b>Full name:</b> ${this.student.firstName} ${this.student.lastName}`, 10, 10);
       doc.text(`Contact info: ${this.student.email} ${this.student.phoneNumber}`, 10, 20);
       doc.text(`Social: ${this.student.twitterHandle} ${this.student.linkedinURL} ${this.student.blog}`, 10, 30);
-      doc.text(`Experience: `, 10, 40);
+      doc.text(`Bio: ${this.student.bio}`, 10, 40);
+      doc.line(10, 50, 200, 50, "s");
+      doc.text(`Experience: `, 10, 60);
       var experiences = this.student.experience;
       var x = 10;
-      var y = 50;
+      var y = 70;
       experiences.forEach(function(experience) {
         doc.text(`${experience.jobTitle}, ${experience.company}, ${experience.startDate}- ${experience.endDate}`, x, y);
         y += 10;
       });
 
+      y += 10;
+      doc.line(10, y, 200, y, "s");
       y += 10;
 
       doc.text(`Education:`, x, y);
@@ -97,6 +104,18 @@ export default {
         doc.text(`${school.university}, ${school.startDate} - ${school.endDate}, degree in ${school.degree}`, x, y);
         y += 10;
       });
+      y += 10;
+
+      doc.line(10, y, 200, y, "s");
+      y += 10;
+
+      doc.text(`Capstone project: ${this.student.capstone.name}`, 10, y);
+      y += 10;
+      doc.text(`${this.student.capstone.description}`, 10, y);
+      y += 10;
+      doc.text(`${this.student.capstone.url}`, 10, y);
+      y += 10;
+      doc.line(10, y, 200, y, "s");
       y += 10;
       doc.text(`Skills:`, 10, y);
       y += 10;
