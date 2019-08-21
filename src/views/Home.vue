@@ -6,8 +6,6 @@
         <button v-on:click="getInfo(student)">{{student.first_name}}</button>
       </div>
     </div>
-        <div class="resume">
-          <h1>{{ student.first_name }} {{ student.last_name }}</h1>
 
         <div class="resume" style="text-align: center">
           <h1>{{ student.first_name }} {{ student.last_name }}</h1>
@@ -41,8 +39,9 @@
           <div>
             {{ student.short_bio }}
           </div>
-
+          <div v-if="student">
           <h1>Experience:</h1>
+        </div>
           <div v-for="experience in student.experiences">
             <h2>
               {{ experience.job_title }}
@@ -54,7 +53,9 @@
               {{ experience.details }}
             </div>
           </div>
+          <div v-if="student">
           <h1>Education:</h1>
+        </div>
           <div v-for="education in student.educations">
             <strong>{{ education.university_name }}</strong> {{ education.start_date }} - {{ education.end_date }}
             <div>
@@ -64,11 +65,15 @@
               {{ education.details }}
             </div>
           </div>
+          <div v-if="student">
           <h1>Skills:</h1>
+        </div>
           <div v-for="skill in student.skills">
             {{ skill.skill_name }} 
           </div>
+          <div v-if="student">
           <h1>Capstone:</h1>
+        </div>
           <div v-for="capstone in student.capstones">
             {{ capstone.name }}
             {{ capstone.description }}
@@ -94,7 +99,7 @@ export default {
   data: function() {
     return {
       message: "welcome to the pdf renderer!",
-      student: {},
+      student: "",
       students: {}
     };
   },
