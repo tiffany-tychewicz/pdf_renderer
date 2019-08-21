@@ -2,7 +2,7 @@
   <div class="home">
     <div class="index">
       <div v-for="student in students">
-        <div class="button" style="text-align: center">
+        <div class="button" style="text-align: center; margin-bottom: 50px">
           <a class="waves-effect waves-light btn" v-on:click="getInfo(student)">
             <i class="material-icons right"></i>
             {{ student.first_name }}
