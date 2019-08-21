@@ -9,8 +9,8 @@
   </div> -->
   <div>
     <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo right">Logo</a>
+      <div class="nav-wrapper blue darken-1">
+        <a href="#" class="brand-logo right">resumate.com</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><a href="/">Renderer</a></li>
           <li><a href="badges.html">Components</a></li>
