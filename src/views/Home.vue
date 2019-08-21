@@ -87,7 +87,7 @@
         </div>
       </div>
       <div class="button" style="text-align: center; margin-top: 15px; margin-bottom: 15px">
-        <a class="waves-effect waves-light btn pulse blue darken-1" v-if="student" v-on:click="renderPDF()">
+        <a class="waves-effect waves-light btn-large pulse blue darken-1" v-if="student" v-on:click="renderPDF()">
           <i class="material-icons right"></i>
           Create PDF
         </a>
