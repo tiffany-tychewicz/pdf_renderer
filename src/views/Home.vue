@@ -5,7 +5,7 @@
         <div class="button" style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
           <a class="waves-effect waves-light btn blue darken-1" v-on:click="getInfo(student)">
             <i class="material-icons right"></i>
-            {{ student.first_name }}
+            {{ student.first_name }} {{student.last_name}}
           </a>
           <!-- <button v-on:click="getInfo(student)">{{ student.first_name }}</button> -->
         </div>
