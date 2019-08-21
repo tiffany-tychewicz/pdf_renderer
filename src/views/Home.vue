@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-        <div class="resume">
+        <div class="resume" style="text-align: center">
           <h1>{{ student.firstName }} {{ student.lastName }}</h1>
           <div class="contact">
           <div>
