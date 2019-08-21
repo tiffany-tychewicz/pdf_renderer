@@ -40,9 +40,6 @@
           <div class="content">
 
           <div>
-            {{ student.photo_url }}
-          </div>
-          <div>
             {{ student.short_bio }}
           </div>
           <div v-if="student">
