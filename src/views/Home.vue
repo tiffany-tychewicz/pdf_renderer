@@ -65,7 +65,10 @@
           </div>
         </div>
         </div>
-      <button v-on:click="renderPDF()">Make PDF</button>
+      <a class="waves-effect waves-light btn" v-on:click="renderPDF()">
+        <i class="material-icons right"></i>
+        Create PDF
+      </a>
     </div>
   </div>
 </template>
